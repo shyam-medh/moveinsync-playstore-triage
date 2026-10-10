@@ -1,0 +1,36 @@
+name: Weekly Play Store Triage
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs automatically every Sunday at midnight
+
+jobs:
+  run-app-triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install google-play-scraper pandas
+
+      - name: Execute Triage Script
+        run: python main.py
+
+      - name: Push Critical Bugs to Jira API
+        run: |
+          curl -D- -u admin:api_token \
+          -X POST \
+          --data @output/mock_jira_tickets.json \
+          -H "Content-Type: application/json" \
+          https://moveinsync.atlassian.net/rest/api/2/issue/bulk
+          
+      - name: Alert Engineering on Slack
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"🚨 Weekly Play Store Triage Complete. Check Jira for new user-reported bugs."}' \
+          ${{ secrets.SLACK_WEBHOOK_URL }}

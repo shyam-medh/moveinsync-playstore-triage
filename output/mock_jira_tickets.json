@@ -1,0 +1,192 @@
+[
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: mobile number is not visible once cab is booked, I...",
+            "description": "User: Sagar Jungade\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\nmobile number is not visible once cab is booked, I can not see latest notification, since seems like notification stack full and never notification can not be shown. for every button click it is asking for policy acceptance, which is very unprofessional. overall user experience is very bad. many bugs and a lot of improvement required. completely unhappy with incorrect app functioning",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: app stuck all the time unable to schedule pathetic...",
+            "description": "User: Amit Marathe\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\napp stuck all the time unable to schedule pathetic",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: Barely works for metro bookings. Even after trying...",
+            "description": "User: Razee Marikar\nRating: 2/5\nVersion: 12.19.0\n\nFull Review:\nBarely works for metro bookings. Even after trying to tell the issues I faced multiple times, seems to have fallen on deaf ears, or they haven't bothered to fix it yet. 1. Goes to full brightness the moment you choose metro ticket option. It is unrequired and doesn't work on all Metro stations with full brightness for high brightness phones. 2. Offline ticket unavailable. stranded if network issues during exit or app server unreachable. 3. Bug when booking ticket once. Ap says booked but no QR",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: This aap keeps on crashing due to some bug and the...",
+            "description": "User: Manas Mishra\nRating: 1/5\nVersion: nan\n\nFull Review:\nThis aap keeps on crashing due to some bug and there is No Update Available Yet... What will Working Professionals do who avail cab services???",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: app crashed did not open in my mobile plx fixed it...",
+            "description": "User: Rehman Saheed\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\napp crashed did not open in my mobile plx fixed it vivo v25 Pro",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: You can't even write in built in feedback text box...",
+            "description": "User: Neeraj Kumar\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\nYou can't even write in built in feedback text box. full of bugs.",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: Please fix the bug..Quite frequently it gives erro...",
+            "description": "User: Mahendra Sawant\nRating: 2/5\nVersion: 12.19.0\n\nFull Review:\nPlease fix the bug..Quite frequently it gives error as\"move in synch application can not be installed/opened as it was not downloaded from play store\".",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: Slow after the update...",
+            "description": "User: J B\nRating: 1/5\nVersion: 12.18.1\n\nFull Review:\nSlow after the update",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: it bugs all the time...",
+            "description": "User: Sara k\nRating: 1/5\nVersion: 12.18.1\n\nFull Review:\nit bugs all the time",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    },
+    {
+        "fields": {
+            "project": {
+                "key": "ENG"
+            },
+            "summary": "Play Store Bug: first if the all the app itself is garbage , would...",
+            "description": "User: harsh sharma\nRating: 1/5\nVersion: 12.18.1\n\nFull Review:\nfirst if the all the app itself is garbage , would crash after every 20days. Then the service , I dont know why companies even go with these retarded service , no ethics and no responsibility at all. Companies should absolutely avoid",
+            "issuetype": {
+                "name": "Bug"
+            },
+            "priority": {
+                "name": "High"
+            },
+            "labels": [
+                "play-store-triage",
+                "user-reported"
+            ]
+        }
+    }
+]
