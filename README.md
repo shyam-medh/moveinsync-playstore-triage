@@ -31,6 +31,8 @@ Running the pipeline against the latest 1,000 live Play Store reviews revealed:
 
 ## 🏗️ System Architecture & Workflow
 
+The codebase is built using a **modular software architecture** to ensure strict separation of concerns, scalability, and easy testability. Instead of a monolithic script, the data pipeline is cleanly separated into distinct extraction, analysis, and reporting modules.
+
 ```mermaid
 graph TD;
     A[Google Play Store API] -->|scraper.py| B(Raw JSON Payload)
