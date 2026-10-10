@@ -41,7 +41,10 @@ def generate_html_dashboard(total_df, negative_df):
     
     html_content = f"""
     <html>
-    <head><title>MoveInSync App Health Triage Report</title></head>
+    <head>
+        <meta charset="UTF-8">
+        <title>MoveInSync App Health Triage Report</title>
+    </head>
     <body style="font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9;">
         <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <h2 style="color: #333;">🚀 MoveInSync Play Store Triage Report</h2>

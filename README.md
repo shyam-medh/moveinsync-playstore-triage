@@ -65,6 +65,14 @@ graph TD;
 
 ---
 
+## 📝 A Note on Generated Artifacts (`output/`)
+- **`app_health_report.html`**: Serves as immediate visual proof of the pipeline's execution, rendering the triaged data into a clean dashboard.
+  
+  ![App Health Dashboard](docs/dashboard.png)
+- **`mock_jira_tickets.json`**: This is a production-ready payload. While currently saved locally as a "mock" artifact, this JSON structure perfectly matches the Jira REST API scheme. Once administrative access and API tokens are provided by the MoveInSync team, this payload will seamlessly create live tickets on the engineering server.
+
+---
+
 ## ⚙️ Continuous Integration (GitHub Actions)
 To fulfill the requirement that this must be a continuous process, the `.github/workflows/play_store_triage.yml` file contains the configuration to run this pipeline autonomously on a cloud runner every Sunday at midnight. 
 
