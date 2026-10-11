@@ -4,17 +4,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: mobile number is not visible once cab is booked, I...",
-            "description": "User: Sagar Jungade\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\nmobile number is not visible once cab is booked, I can not see latest notification, since seems like notification stack full and never notification can not be shown. for every button click it is asking for policy acceptance, which is very unprofessional. overall user experience is very bad. many bugs and a lot of improvement required. completely unhappy with incorrect app functioning",
+            "summary": "[Crashes/Performance/GPS/Tracking] Play Store Bug \u2014 4 user(s) affected: Sometimes, the map gets stuck, which can cause delays. Pleas...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 4\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* Crashes/Performance, GPS/Tracking\n*RAG Relevance Score:* 0.5351\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"Sometimes, the map gets stuck, which can cause delays. Please add an important feature where the timer starts at least 5\"\n  - \"cab are always late and track is also not available many time\"\n  - \"Worthless app..Driver arrival shows in 5mins when we leave home to the pick point changes to 30mins..I mean changing to \"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 4 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-4-users"
             ]
         }
     },
@@ -23,17 +25,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: app stuck all the time unable to schedule pathetic...",
-            "description": "User: Amit Marathe\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\napp stuck all the time unable to schedule pathetic",
+            "summary": "[GPS/Tracking] Play Store Bug \u2014 4 user(s) affected: damned!! worst app. Can't do live tracking or live boarding ...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 4\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* GPS/Tracking\n*RAG Relevance Score:* 0.497\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"Worst app. Very very slow. Show Address is navigating 4 times to the same screen.\"\n  - \"damned!! worst app. Can't do live tracking or live boarding activities. suddenly it shows up at your location. You guys \"\n  - \"very bad , this app is not updated every thing on time\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 4 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-4-users"
             ]
         }
     },
@@ -42,17 +46,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: Barely works for metro bookings. Even after trying...",
-            "description": "User: Razee Marikar\nRating: 2/5\nVersion: 12.19.0\n\nFull Review:\nBarely works for metro bookings. Even after trying to tell the issues I faced multiple times, seems to have fallen on deaf ears, or they haven't bothered to fix it yet. 1. Goes to full brightness the moment you choose metro ticket option. It is unrequired and doesn't work on all Metro stations with full brightness for high brightness phones. 2. Offline ticket unavailable. stranded if network issues during exit or app server unreachable. 3. Bug when booking ticket once. Ap says booked but no QR",
+            "summary": "[Booking] Play Store Bug \u2014 4 user(s) affected: not able to book cab....",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 4\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* Booking\n*RAG Relevance Score:* 0.5812\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"not able to book cab.\"\n  - \"when booking a cab it freezes if too many people try at once\"\n  - \"Neither can change the address nor can track cab properly\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 4 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-4-users"
             ]
         }
     },
@@ -61,17 +67,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: This aap keeps on crashing due to some bug and the...",
-            "description": "User: Manas Mishra\nRating: 1/5\nVersion: nan\n\nFull Review:\nThis aap keeps on crashing due to some bug and there is No Update Available Yet... What will Working Professionals do who avail cab services???",
+            "summary": "[GPS/Tracking] Play Store Bug \u2014 4 user(s) affected: before the upgrade the app was good as we could see the shut...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 4\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* GPS/Tracking\n*RAG Relevance Score:* 0.4408\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"Unable to book a shuttle at this time. App stuck at \"Finding your location\" for several minutes. But I'm happy that the \"\n  - \"before the upgrade the app was good as we could see the shuttles location which is now not available causing tremendous \"\n  - \"The recent updates in the UI have made the app very difficult to use. Booking a shuttle is now a 2 step process previous\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 4 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-4-users"
             ]
         }
     },
@@ -80,17 +88,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: app crashed did not open in my mobile plx fixed it...",
-            "description": "User: Rehman Saheed\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\napp crashed did not open in my mobile plx fixed it vivo v25 Pro",
+            "summary": "[OTP/Login] Play Store Bug \u2014 3 user(s) affected: This app is going from bad to horrible. The seat buckle veri...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 3\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* OTP/Login\n*RAG Relevance Score:* 0.4946\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"This app is going from bad to horrible. The seat buckle verification is absolutely horrendous and the OTP keeps disappea\"\n  - \"filthy app, stupid pickup location for login time. The handlers of this app lack common sense. The best thing to do is t\"\n  - \"Total waste of time. Support is useless and the staff is incredibly rude. To make matters worse, the app is a mess\u2014picku\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 3 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-3-users"
             ]
         }
     },
@@ -99,17 +109,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: You can't even write in built in feedback text box...",
-            "description": "User: Neeraj Kumar\nRating: 1/5\nVersion: 12.19.0\n\nFull Review:\nYou can't even write in built in feedback text box. full of bugs.",
+            "summary": "[Crashes/Performance] Play Store Bug \u2014 3 user(s) affected: This aap keeps on crashing due to some bug and there is No U...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 3\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* Crashes/Performance\n*RAG Relevance Score:* 0.5672\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"This aap keeps on crashing due to some bug and there is No Update Available Yet... What will Working Professionals do wh\"\n  - \"unable to book cabs and even the support team is not helping fix the issue ...\"\n  - \"very poor service, cab allocation is getting delayed on an everyday basis, very unprofessional\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 3 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-3-users"
             ]
         }
     },
@@ -118,17 +130,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: Please fix the bug..Quite frequently it gives erro...",
-            "description": "User: Mahendra Sawant\nRating: 2/5\nVersion: 12.19.0\n\nFull Review:\nPlease fix the bug..Quite frequently it gives error as\"move in synch application can not be installed/opened as it was not downloaded from play store\".",
+            "summary": "[GPS/Tracking] Play Store Bug \u2014 2 user(s) affected: the update is worse. it wont let you track the location of t...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 2\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* GPS/Tracking\n*RAG Relevance Score:* 0.4373\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"the update is worse. it wont let you track the location of the van under an hour\"\n  - \"The Cab Tracker is useless, and it doesn't even update on time.\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 2 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-2-users"
             ]
         }
     },
@@ -137,17 +151,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: Slow after the update...",
-            "description": "User: J B\nRating: 1/5\nVersion: 12.18.1\n\nFull Review:\nSlow after the update",
+            "summary": "[Booking] Play Store Bug \u2014 2 user(s) affected: waste app. driver will come to pickup point and wait for 1 h...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 2\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* Booking\n*RAG Relevance Score:* 0.4815\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"waste app. driver will come to pickup point and wait for 1 hour but won't give a short call. this app will only accept 1\"\n  - \"waste app since unable to book cab from the app and also unable to see the calendar, very worst useless app\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 2 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-2-users"
             ]
         }
     },
@@ -156,17 +172,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: it bugs all the time...",
-            "description": "User: Sara k\nRating: 1/5\nVersion: 12.18.1\n\nFull Review:\nit bugs all the time",
+            "summary": "[Crashes/Performance/GPS/Tracking] Play Store Bug \u2014 2 user(s) affected: location and its root is accurate many times, hangs for unkn...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 2\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* Crashes/Performance, GPS/Tracking\n*RAG Relevance Score:* 0.5811\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"location and its root is accurate many times, hangs for unknown reasons, no feedback option to feedback about the app, i\"\n  - \"I don't know which idiot has designed this app, whenever you see the location, it shows one or two hours ago, it does no\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 2 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-2-users"
             ]
         }
     },
@@ -175,17 +193,19 @@
             "project": {
                 "key": "ENG"
             },
-            "summary": "Play Store Bug: first if the all the app itself is garbage , would...",
-            "description": "User: harsh sharma\nRating: 1/5\nVersion: 12.18.1\n\nFull Review:\nfirst if the all the app itself is garbage , would crash after every 20days. Then the service , I dont know why companies even go with these retarded service , no ethics and no responsibility at all. Companies should absolutely avoid",
+            "summary": "[Booking] Play Store Bug \u2014 2 user(s) affected: They provide pickup and drop to the middle of nowhere from w...",
+            "description": "*Automated via MoveInSync RAG Triage Pipeline*\n\n*Affected Users:* 2\n*Lowest Rating in Cluster:* 1/5\n*Category Tags:* Booking\n*RAG Relevance Score:* 0.4612\n\n*Sample User Reviews (validated & deduplicated):*\n  - \"They provide pickup and drop to the middle of nowhere from where its double work reaching our home or office from their \"\n  - \"works well overall, but they don't listen to feedback. for example, pick ups from same apartment complex are scheduled w\"\n\n*Action Required:* This ticket was auto-generated after semantic deduplication. It represents a cluster of 2 users reporting the same issue. Please investigate and resolve.",
             "issuetype": {
                 "name": "Bug"
             },
             "priority": {
-                "name": "High"
+                "name": "Medium"
             },
             "labels": [
                 "play-store-triage",
-                "user-reported"
+                "user-reported",
+                "rag-validated",
+                "affects-2-users"
             ]
         }
     }

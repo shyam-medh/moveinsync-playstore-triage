@@ -34,3 +34,18 @@ jobs:
           curl -X POST -H 'Content-type: application/json' \
           --data '{"text":"🚨 Weekly Play Store Triage Complete. Check Jira for new user-reported bugs."}' \
           ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Persist Weekly Rating Trend History & HTML Dashboard
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [Triage Bot]"
+          git add output/rating_trend_history.json output/app_health_report.html
+          git commit -m "chore(triage): record weekly rating trend snapshot & health report [skip ci]" || echo "No changes to commit"
+          git push
+
+      - name: Upload Triage Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: triage-artifacts
+          path: output/
+

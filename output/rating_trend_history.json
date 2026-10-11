@@ -1,0 +1,13 @@
+[
+    {
+        "timestamp": "2026-10-12 00:29:14",
+        "scrape_date_range": "Jun 14, 2026 \u2192 Oct 09, 2026",
+        "total_reviews": 1000,
+        "mean_rating": 3.77,
+        "negative_reviews": 292,
+        "negative_share_pct": 29.2,
+        "p0_p1_clusters": 292,
+        "top_complaint": "Crashes/Performance",
+        "source": "live_scrape"
+    }
+]

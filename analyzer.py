@@ -9,12 +9,12 @@ def categorize_reviews(df):
     negative_df = df[df['score'] <= 2].copy()
     print(f"Found {len(negative_df)} severe negative (1-2 star) reviews.")
     
-    # Categorization logic using NLP Keywords
+    # Categorization logic using NLP Keywords aligned with triage categories
     keywords = {
-        'Auth_Issue': ['otp', 'login', 'logout', 'log out', 'password', 'session'],
-        'Engineering_Bug': ['crash', 'freeze', 'loading', 'slow', 'stuck', 'blank', 'bug', 'glitch'],
-        'Location_Issue': ['gps', 'track', 'location', 'map', 'update', 'show', 'lag'],
-        'Operations': ['driver', 'rude', 'late', 'cab', 'driver refused', 'delay']
+        'Booking': ['book', 'booking', 'reserve', 'roster', 'schedule', 'adhoc', 'ad-hoc', 'cancel', 'slot', 'metro booking'],
+        'Crashes/Performance': ['crash', 'freeze', 'loading', 'slow', 'stuck', 'blank', 'bug', 'glitch', 'hang', 'performance', 'lag', 'wont open', 'not open', 'closing'],
+        'GPS/Tracking': ['gps', 'track', 'tracking', 'location', 'map', 'driver location', 'live tracking', 'route', 'navigate', 'stuck on map'],
+        'OTP/Login': ['otp', 'login', 'logout', 'log out', 'log in', 'password', 'session', 'auth', 'verification', 'sms', 'sign in', 'account']
     }
 
     def _apply_tags(text):

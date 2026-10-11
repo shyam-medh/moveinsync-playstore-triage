@@ -1,24 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveInSync Play Store Review Triage</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>MoveInSync App Health Triage Report</title>
-    </head>
-    <body style="font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9;">
-        <div style="background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <h2 style="color: #333;">🚀 MoveInSync Play Store Triage Report</h2>
-            <p><strong>Generated on:</strong> 2026-10-11 02:28:18</p>
-            <p><strong>Recent App Health Score:</strong> <span style="font-size: 24px; font-weight: bold; color: #2ecc71;">70.8/100</span></p>
-            <p style="color: #666;"><i>(Based on sentiment of the last 1000 reviews)</i></p>
-            <hr style="border: 1px solid #eee; margin: 20px 0;">
-            <h3 style="color: #333;">🚨 Triage Breakdown (1 & 2 Star Reviews)</h3>
-            <ul>
-                <li><strong>Engineering Bugs (Crashes/Freezes):</strong> 31</li>
-                <li><strong>Authentication Issues (OTP/Login):</strong> 28</li>
-                <li><strong>Location/Tracking Lags:</strong> 71</li>
-                <li><strong>Operations (Driver/Cab issues):</strong> 60</li>
-            </ul>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #edf2f7;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 22px 24px;
+            margin-bottom: 18px;
+        }
+
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+        }
+
+        .header-sub {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 4px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+
+        .alert-banner {
+            background-color: #fff8ee;
+            border: 1px solid #fdecd2;
+            border-radius: 4px;
+            padding: 10px 14px;
+            color: #855307;
+            font-size: 0.75rem;
+            line-height: 1.45;
+            margin-top: 14px;
+            margin-bottom: 20px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .metric-box {
+            background-color: #edf2f7;
+            border-radius: 6px;
+            padding: 10px 14px;
+        }
+
+        .metric-label {
+            font-size: 0.72rem;
+            color: #475569;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .metric-val {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .card-subtitle {
+            font-size: 0.72rem;
+            color: #64748b;
+            margin-top: -6px;
+            margin-bottom: 12px;
+        }
+
+        .triage-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.775rem;
+        }
+
+        .triage-table th {
+            background-color: #eaf0f6;
+            color: #334155;
+            font-weight: 600;
+            text-align: left;
+            padding: 8px 14px;
+            font-size: 0.75rem;
+        }
+
+        .triage-table td {
+            padding: 9px 14px;
+            color: #334155;
+            border-bottom: 1px solid #edf2f7;
+            vertical-align: top;
+        }
+
+        .triage-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .steps-table td {
+            line-height: 1.45;
+        }
+
+        .steps-table td:nth-child(1) {
+            font-weight: 600;
+            width: 18%;
+        }
+
+        .steps-table td:nth-child(2) {
+            width: 16%;
+        }
+
+        .steps-table td:nth-child(3) {
+            width: 42%;
+        }
+
+        .steps-table td:nth-child(4) {
+            width: 24%;
+            color: #475569;
+        }
+
+        /* ---- Badges & Cluster Cards ---- */
+        .badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .badge-p0 {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .badge-p1 {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fde68a;
+        }
+
+        .badge-tag {
+            background-color: #edf2f7;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        .badge-up {
+            background-color: #dcfce7;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+
+        .badge-down {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .badge-neutral {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cluster-card {
+            border: 1px solid #edf2f7;
+            background-color: #fafbfc;
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin-top: 12px;
+        }
+
+        .cluster-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .cluster-tags {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cluster-meta {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .meta-pill {
+            font-size: 0.72rem;
+            color: #64748b;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .cluster-summary {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .sample-box {
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-top: 6px;
+        }
+
+        .sample-title {
+            font-size: 0.7rem;
+            color: #64748b;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .sample-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sample-review {
+            font-size: 0.775rem;
+            color: #475569;
+            font-style: italic;
+            padding: 2px 0;
+        }
+
+        .export-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px solid #edf2f7;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        @media (max-width: 640px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header Card -->
+        <div class="card">
+            <h1 class="header-title">MoveInSync Play Store Review Triage</h1>
+            <div class="header-sub">Source: Google Play Store live scrape (package: com.moveinsync.ets)</div>
+            <div class="alert-banner">
+                Sample mean &ne; official Google Play listing rating. Categories are heuristic, may overlap, and are not verified root causes. Priorities are investigation suggestions.
+            </div>
+
+            <div class="metrics-grid" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="metric-box">
+                    <div class="metric-label">Reviews scraped</div>
+                    <div class="metric-val">1,000</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Sample mean stars</div>
+                    <div class="metric-val">3.77/5</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">1–2 star reviews</div>
+                    <div class="metric-val">292</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Negative share</div>
+                    <div class="metric-val">29.2%</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">RAG-validated bugs</div>
+                    <div class="metric-val">73</div>
+                </div>
+            </div>
         </div>
-    </body>
-    </html>
-    
+
+        <!-- Star distribution Card -->
+        <div class="card">
+            <h2 class="card-title">Star distribution</h2>
+            <table class="triage-table">
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">Rating</th>
+                        <th style="width: 50%;">Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1 stars</td>
+                        <td>259</td>
+                    </tr>
+                    <tr>
+                        <td>2 stars</td>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>3 stars</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>4 stars</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td>5 stars</td>
+                        <td>640</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Rating Trend & Historical Trajectory (Solves Problem 4) -->
+        <div class="card">
+            <h2 class="card-title">Rating Trend &amp; Historical Trajectory</h2>
+            <div class="card-subtitle">Tracks weekly rating progression and persistent snapshots across pipeline runs to measure whether engineering fixes raise ratings.</div>
+            <table class="triage-table">
+                <thead>
+                    <tr>
+                        <th style="width: 32%;">Period (Weekly Cohort)</th>
+                        <th style="width: 18%;">Review Volume</th>
+                        <th style="width: 18%;">Average Rating</th>
+                        <th style="width: 18%;">Negative Share</th>
+                        <th style="width: 14%;">WoW Trajectory</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td><strong>Aug 31 – Sep 06, 2026</strong></td>
+                <td>51 reviews</td>
+                <td><strong>3.82</strong> / 5.0</td>
+                <td>27.5% (14 reports)</td>
+                <td><span class="badge badge-neutral">Baseline</span></td>
+            </tr>
+            
+
+            <tr>
+                <td><strong>Sep 07 – Sep 13, 2026</strong></td>
+                <td>50 reviews</td>
+                <td><strong>4.02</strong> / 5.0</td>
+                <td>22.0% (11 reports)</td>
+                <td><span class="badge badge-up">▲ +0.20</span></td>
+            </tr>
+            
+
+            <tr>
+                <td><strong>Sep 14 – Sep 20, 2026</strong></td>
+                <td>69 reviews</td>
+                <td><strong>3.90</strong> / 5.0</td>
+                <td>27.5% (19 reports)</td>
+                <td><span class="badge badge-down">▼ -0.12</span></td>
+            </tr>
+            
+
+            <tr>
+                <td><strong>Sep 21 – Sep 27, 2026</strong></td>
+                <td>57 reviews</td>
+                <td><strong>3.56</strong> / 5.0</td>
+                <td>35.1% (20 reports)</td>
+                <td><span class="badge badge-down">▼ -0.34</span></td>
+            </tr>
+            
+
+            <tr>
+                <td><strong>Sep 28 – Oct 04, 2026</strong></td>
+                <td>44 reviews</td>
+                <td><strong>3.64</strong> / 5.0</td>
+                <td>31.8% (14 reports)</td>
+                <td><span class="badge badge-up">▲ +0.08</span></td>
+            </tr>
+            
+
+            <tr>
+                <td><strong>Oct 05 – Oct 11, 2026</strong></td>
+                <td>60 reviews</td>
+                <td><strong>3.80</strong> / 5.0</td>
+                <td>30.0% (18 reports)</td>
+                <td><span class="badge badge-up">▲ +0.16</span></td>
+            </tr>
+            
+                </tbody>
+            </table>
+            <div class="export-footer">
+                <span>📁 Snapshot history retained at <code>output/rating_trend_history.json</code> for weekly CI/CD comparison</span>
+                <span>▼ -0.02 rating decline over 6 weeks</span>
+            </div>
+        </div>
+
+        <!-- Complaint categories Card -->
+        <div class="card">
+            <h2 class="card-title">Complaint categories (1–2 star sample)</h2>
+            <div class="card-subtitle">One review may match multiple categories; percentages need not sum to 100%.</div>
+            <table class="triage-table">
+                <thead>
+                    <tr>
+                        <th style="width: 45%;">Category</th>
+                        <th style="width: 25%;">Mentions</th>
+                        <th style="width: 30%;">% of negative reviews</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Booking</td>
+                        <td>43</td>
+                        <td>14.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Crashes/Performance</td>
+                        <td>45</td>
+                        <td>15.4%</td>
+                    </tr>
+                    <tr>
+                        <td>GPS/Tracking</td>
+                        <td>41</td>
+                        <td>14.0%</td>
+                    </tr>
+                    <tr>
+                        <td>OTP/Login</td>
+                        <td>31</td>
+                        <td>10.6%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Actionable next steps Card -->
+        <div class="card">
+            <h2 class="card-title">Actionable next steps</h2>
+            <div class="card-subtitle">Priority assigned by real mention volume from this scrape run — top 2 categories get P0, rest get P1.</div>
+            <table class="triage-table steps-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Suggested triage</th>
+                        <th>First engineering action</th>
+                        <th>Track</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Crashes/Performance</td>
+                        <td><span class="badge badge-p0">P0 candidate</span></td>
+                        <td>Instrument crashes by app version and device; reproduce highest-frequency stack traces and deploy targeted fixes.</td>
+                        <td>Crash-free sessions %, app startup p95</td>
+                    </tr>
+
+                    <tr>
+                        <td>Booking</td>
+                        <td><span class="badge badge-p0">P0 candidate</span></td>
+                        <td>Reproduce failed self-booking across roster, cutoff, and network states; add structured booking error telemetry; fix top confirmed error codes.</td>
+                        <td>Booking completion rate, booking failures / 1,000 attempts</td>
+                    </tr>
+
+                    <tr>
+                        <td>GPS/Tracking</td>
+                        <td><span class="badge badge-p1">P1 candidate</span></td>
+                        <td>Measure device GPS accuracy and stale tracking updates; provide refresh/retry UI and last-updated timestamps.</td>
+                        <td>Location freshness p95, inaccurate pickup reports / day</td>
+                    </tr>
+
+                    <tr>
+                        <td>OTP/Login</td>
+                        <td><span class="badge badge-p1">P1 candidate</span></td>
+                        <td>Trace OTP generation, delivery and verification error rates; implement resend cooldown and clear recoverable error messages.</td>
+                        <td>OTP verification success %, p95 OTP delivery time</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- RAG-Validated & Deduplicated Engineering Bug Clusters -->
+        <div class="card">
+            <h2 class="card-title">RAG-Validated &amp; Deduplicated Bug Clusters</h2>
+            <div class="card-subtitle">Verified against MoveInSync feature documentation via ChromaDB + Gemini 3.8 Flash, then clustered via sentence embeddings.</div>
+            
+        <div class="cluster-card">
+            <div class="cluster-header">
+                <div class="cluster-tags">
+                    <span class="badge badge-p0">P0 — 8 Users Affected</span>
+                    <span class="badge badge-tag">Uncategorized</span>
+                </div>
+                <div class="cluster-meta">
+                    <span class="meta-pill">⭐ 1/5 min rating</span>
+                    <span class="meta-pill">🤖 RAG: 0.553</span>
+                </div>
+            </div>
+            <p class="cluster-summary">"worst app, no feedback option for routing and journey...."</p>
+            <div class="sample-box">
+                <span class="sample-title">Sample user quotes in this cluster:</span>
+                <ul class="sample-list"><li class="sample-review">"worst app, no feedback option for routing and journey."</li><li class="sample-review">"worst app. no feedback link. message comes wrongly before the vehicle arrives or reaches destination"</li></ul>
+            </div>
+        </div>
+        
+
+        <div class="cluster-card">
+            <div class="cluster-header">
+                <div class="cluster-tags">
+                    <span class="badge badge-p0">P0 — 6 Users Affected</span>
+                    <span class="badge badge-tag">Uncategorized</span>
+                </div>
+                <div class="cluster-meta">
+                    <span class="meta-pill">⭐ 1/5 min rating</span>
+                    <span class="meta-pill">🤖 RAG: 0.5277</span>
+                </div>
+            </div>
+            <p class="cluster-summary">"worst allstate cab management services!!! Very unprofessional... not recommended at all...."</p>
+            <div class="sample-box">
+                <span class="sample-title">Sample user quotes in this cluster:</span>
+                <ul class="sample-list"><li class="sample-review">"worst allstate cab management services!!! Very unprofessional... not recommended at all."</li><li class="sample-review">"worst cab services anyone can expect ! I m wasting my 3 hours daily in cabs"</li></ul>
+            </div>
+        </div>
+        
+
+        <div class="cluster-card">
+            <div class="cluster-header">
+                <div class="cluster-tags">
+                    <span class="badge badge-p0">P0 — 4 Users Affected</span>
+                    <span class="badge badge-tag">Crashes/Performance</span> <span class="badge badge-tag">GPS/Tracking</span>
+                </div>
+                <div class="cluster-meta">
+                    <span class="meta-pill">⭐ 1/5 min rating</span>
+                    <span class="meta-pill">🤖 RAG: 0.5351</span>
+                </div>
+            </div>
+            <p class="cluster-summary">"Sometimes, the map gets stuck, which can cause delays. Please add an important feature where the timer starts at least 5 minutes before the driver arrives at my pickup location...."</p>
+            <div class="sample-box">
+                <span class="sample-title">Sample user quotes in this cluster:</span>
+                <ul class="sample-list"><li class="sample-review">"Sometimes, the map gets stuck, which can cause delays. Please add an important feature where the timer starts at least 5 minutes before the "</li><li class="sample-review">"cab are always late and track is also not available many time"</li></ul>
+            </div>
+        </div>
+        
+
+        <div class="cluster-card">
+            <div class="cluster-header">
+                <div class="cluster-tags">
+                    <span class="badge badge-p0">P0 — 4 Users Affected</span>
+                    <span class="badge badge-tag">GPS/Tracking</span>
+                </div>
+                <div class="cluster-meta">
+                    <span class="meta-pill">⭐ 1/5 min rating</span>
+                    <span class="meta-pill">🤖 RAG: 0.497</span>
+                </div>
+            </div>
+            <p class="cluster-summary">"damned!! worst app. Can't do live tracking or live boarding activities. suddenly it shows up at your location. You guys loved surprises huh??!!! Ridiculous..."</p>
+            <div class="sample-box">
+                <span class="sample-title">Sample user quotes in this cluster:</span>
+                <ul class="sample-list"><li class="sample-review">"Worst app. Very very slow. Show Address is navigating 4 times to the same screen."</li><li class="sample-review">"damned!! worst app. Can't do live tracking or live boarding activities. suddenly it shows up at your location. You guys loved surprises huh?"</li></ul>
+            </div>
+        </div>
+        
+
+        <div class="cluster-card">
+            <div class="cluster-header">
+                <div class="cluster-tags">
+                    <span class="badge badge-p0">P0 — 4 Users Affected</span>
+                    <span class="badge badge-tag">Booking</span>
+                </div>
+                <div class="cluster-meta">
+                    <span class="meta-pill">⭐ 1/5 min rating</span>
+                    <span class="meta-pill">🤖 RAG: 0.5812</span>
+                </div>
+            </div>
+            <p class="cluster-summary">"not able to book cab...."</p>
+            <div class="sample-box">
+                <span class="sample-title">Sample user quotes in this cluster:</span>
+                <ul class="sample-list"><li class="sample-review">"not able to book cab."</li><li class="sample-review">"when booking a cab it freezes if too many people try at once"</li></ul>
+            </div>
+        </div>
+        
+            <div class="export-footer">
+                <span>📋 Jira API payload generated at <code>output/mock_jira_tickets.json</code></span>
+                <span>Generated on October 12, 2026 at 00:29:14</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
